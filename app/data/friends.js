@@ -1,7 +1,7 @@
 // JSON
 // =============================================================
 
-var friends = [
+var friendsArray = [
     {
      "name": "Omar",
      "photo": "https://lh5.googleusercontent.com/-JceZsHGh-QM/AAAAAAAAAAI/AAAAAAAAABc/ofh-ghWN8iA/photo.jpg",
@@ -20,3 +20,5 @@ var friends = [
         ]
     }
 ];
+
+module.exports = friendsArray;

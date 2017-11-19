@@ -2,8 +2,8 @@
 // =============================================================
 const express = require("express");
 const bodyParser = require("body-parser");
-const path = require("path");
-const htmlRoutes = require("./app/routing/htmlRoutes.js")
+
+
 
 // Sets up the Express App
 // =============================================================
@@ -14,18 +14,10 @@ const PORT = process.env.PORT || 3000;
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
-// Routes
+// Router
 // =============================================================
-// htmlRoutes.home;
-console.log(htmlRoutes.home);
-app.get("/survey", function(req, res) 
-    {
-        res.sendFile(path.join(__dirname, "app/public/survey.html"))
-    });
-app.get("/", function(req, res) 
-    {
-        res.sendFile(path.join(__dirname, "app/public/home.html"))
-    });
+require("./app/routing/apiRoutes")(app);
+require("./app/routing/htmlRoutes")(app);
 
 // Starts the server to begin listening
 // =============================================================
